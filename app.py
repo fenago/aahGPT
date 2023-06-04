@@ -1,5 +1,4 @@
 import streamlit as st
-import os
 from llama_index import GPTVectorStoreIndex
 from llama_index.vector_stores import PineconeVectorStore
 
@@ -10,7 +9,7 @@ pinecone_index_environment = "asia-southeast1-gcp"  # Update with your Pinecone 
 # Set Pinecone API key
 os.environ["PINECONE_API_KEY"] = "YOUR_PINECONE_API_KEY"  # Update with your Pinecone API key
 
-# Connect to Pinecone index
+# Connect to the existing Pinecone index
 vector_store = PineconeVectorStore(
     index_name=pinecone_index_name,
     environment=pinecone_index_environment
