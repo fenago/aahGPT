@@ -1,12 +1,12 @@
-# Import necessary libraries
 import streamlit as st
 import pinecone
 
-# Get the Pinecone API key from Streamlit secrets
-pinecone_api_key = st.secrets["pinecone_api_key"]
+# Get Pinecone API key and environment from Streamlit secrets
+pinecone_api_key = st.secrets["pinecone"]["api_key"]
+pinecone_environment = st.secrets["pinecone"]["environment"]
 
-# Initialize Pinecone
-pinecone.init(api_key=pinecone_api_key)
+# Authenticate with Pinecone
+pinecone.init(api_key=pinecone_api_key, environment=pinecone_environment)
 
 # Pinecone index name
 index_name = "influential-americans"
