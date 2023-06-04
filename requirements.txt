@@ -2,3 +2,4 @@ llama-index
 pinecone-client
 streamlit
 transformers
+os
