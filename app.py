@@ -32,6 +32,3 @@ if query_input:
         st.write(item.id, item.score)
 else:
     st.write("Please enter a query.")
-
-# Deinitialize Pinecone when done
-pinecone.deinit()
