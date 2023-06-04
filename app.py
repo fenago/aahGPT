@@ -21,11 +21,17 @@ else:
 query_input = st.text_input("Enter your query:")
 
 if query_input:
-    # Create a pinecone query
-    query_result = pinecone.deployment(index_name).query(queries=[query_input], top_k=10)
+    # Create a Pinecone index instance
+    index = pinecone.Index(index_name)
+    
+    # Query the index
+    query_result = index.query(queries=[query_input], top_k=10)
     
     # Show the result
     for item in query_result.results:
         st.write(item.id, item.score)
 else:
     st.write("Please enter a query.")
+
+# Deinitialize Pinecone when done
+pinecone.deinit()
