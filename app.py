@@ -3,10 +3,10 @@ from llama_index import GPTVectorStoreIndex
 
 # Load your Pinecone index
 index_name = "influential-americans"
-city_index = GPTVectorStoreIndex.from_defaults(index_name=index_name)
+city_index = GPTVectorStoreIndex()
 
 def main():
-    st.title("Influential African Americans Search")
+    st.title("Influential African Americans GPT")
     
     query = st.text_input("Enter a query")
     
