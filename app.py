@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 from llama_index import GPTVectorStoreIndex
 from llama_index.vector_stores import PineconeVectorStore
 
