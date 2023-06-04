@@ -29,7 +29,8 @@ if st.button("Submit"):
         else:
             try:
                 # This example uses gpt-4 by default; feel free to change if desired
-                llm_predictor = LLMPredictor(llm=OpenAI(api_key=openai_api_key, temperature=0, model_name="gpt-4"))
+                # Note: Pass OpenAI API key explicitly
+                llm_predictor = LLMPredictor(llm=OpenAI(temperature=0, model_name="gpt-4", openai_api_key=openai_api_key))
 
                 # Connect to the existing Pinecone index
                 index = pinecone.Index(index_name)
