@@ -16,8 +16,8 @@ vector_store = PineconeVectorStore(
     environment=pinecone_index_environment
 )
 
-# Create an empty GPTVectorStoreIndex with the provided index structure
-aa_index = GPTVectorStoreIndex(index_struct=vector_store.index_struct)
+# Create an empty GPTVectorStoreIndex
+city_index = GPTVectorStoreIndex()
 
 def main():
     st.title("Influential African Americans Search")
