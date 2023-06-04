@@ -1,12 +1,22 @@
 import streamlit as st
 from llama_index import GPTVectorStoreIndex
+from llama_index.vector_stores import PineconeVectorStore
 
-# Load your Pinecone index
-index_name = "influential-americans"
-city_index = GPTVectorStoreIndex()
+# Pinecone configuration
+pinecone_index_name = "influential-americans"
+pinecone_index_environment = "asia-southeast1-gcp"  # Update with your Pinecone environment
+
+# Connect to Pinecone index
+vector_store = PineconeVectorStore(
+    index_name=pinecone_index_name,
+    environment=pinecone_index_environment
+)
+
+# Create GPTVectorStoreIndex
+city_index = GPTVectorStoreIndex(vector_store=vector_store)
 
 def main():
-    st.title("Influential African Americans GPT")
+    st.title("Influential African Americans Search")
     
     query = st.text_input("Enter a query")
     
