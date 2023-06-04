@@ -1,6 +1,7 @@
 import streamlit as st
 from llama_index import GPTVectorStoreIndex
 from llama_index.vector_stores import PineconeVectorStore
+import os
 
 # Pinecone configuration
 pinecone_index_name = "influential-americans"
