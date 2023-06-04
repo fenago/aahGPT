@@ -1,15 +1,12 @@
 import streamlit as st
-import os
 import pinecone
+import json
 
 # Pinecone configuration
 pinecone_index_name = "influential-americans"
 
-# Set Pinecone API key
-os.environ["PINECONE_API_KEY"] = "YOUR_PINECONE_API_KEY"  # Update with your Pinecone API key
-
 # Connect to the Pinecone index
-pinecone.init(api_key=os.environ["PINECONE_API_KEY"])
+pinecone.init(api_key=st.secrets["pinecone_api_key"])
 pinecone_index = pinecone.Index(index_name=pinecone_index_name)
 
 def main():
